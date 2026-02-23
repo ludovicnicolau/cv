@@ -2,6 +2,7 @@ const skillbars = document.querySelectorAll('.skillbar');
 const skills = document.querySelector('.skills');
 const scholarship = document.querySelector('.scholarship');
 const contact = document.querySelector('.contact');
+const projects = document.querySelector('.projects');
 const animated_text = document.querySelector('.cv-header__text__animated-text__function');
 let current_text = 0;
 
@@ -32,16 +33,23 @@ function makeContactAppear() {
     contact.classList.add('contact--appear');
 }
 
+function makeProjectsAppear() {
+    projects.classList.add('projects--appear');
+}
+
 window.addEventListener('scroll', () => {
     // isInView defined in 'js/utils'
-    if (isInView(skills, 10)) { 
+    if (isInView(skills, 100)) { 
         makeSkillsAppear();
     }
-    if (isInView(scholarship, 10)) {
+    if (isInView(scholarship, 100)) {
         makeScholarshipAppear();
     }
-    if (isInView(contact, 5)) {
+    if (isInView(contact, 20)) {
         makeContactAppear();
+    }
+    if (isInView(projects, 20)) {
+        makeProjectsAppear();
     }
 })
 
